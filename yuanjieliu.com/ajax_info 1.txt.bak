@@ -1,4 +1,0 @@
-Readystate = 1 and server connection established
-Readystate = 2 and Request has been received.
-Readystate = 3 and Request is being processed.
-Readystate = 4 and Request finished and Response is ready.
