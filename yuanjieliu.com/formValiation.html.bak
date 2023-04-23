@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm1() {
+  let x = document.forms["myForm1"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+
+function validateForm2() {
+  // Get the value of the input field with id="numb"
+  let x = document.getElementById("numb").value;
+  // If x is Not a Number or less than one or greater than 10
+  let text;
+  if (isNaN(x) || x < 1 || x > 10) {
+    text = "Input not valid";
+  } else {
+    text = "Input OK";
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+</script>
+</head>
+<body>
+
+<p>Do not enter txt but click on submi. What happens?</p>
+
+<form name="myForm1" onsubmit="return validateForm1()" method="post">
+  First Name: <input type="text" name="fname">
+  <input type="submit" value="Submit">
+</form></br>
+
+<p>Please input a number between 1 and 10:</p>
+
+<input id="numb">
+
+<button type="button" onclick="validateForm2()">Submit</button>
+
+<p id="demo"></p>
+
+</br>
+
+<p>Do not enter txt but click on submi. What happens?</p>
+
+<form action="/action_page.php" method="post">
+  <input type="text" name="fname" required>
+  <input type="submit" value="Submit">
+</form>
+
+
+</body>
+</html>
