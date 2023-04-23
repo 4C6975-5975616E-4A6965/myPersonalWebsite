@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+<title>Ajax Demonstration of POST REQUEST</title>
+</head>
+<body>
+<a href="index.html">Home</a>
+<h1>AJAX using POST method:  The XMLHttpRequest Object</h1>
+
+<button type="button" onclick="loadDoc()">Request data with POST</button>
+
+<p id="demo"></p>
+ 
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "dataEntry.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("fname=Henry&lname=Ford");
+}
+</script>
+
+</body>
+</html>
